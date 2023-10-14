@@ -8,3 +8,6 @@ class Updated_ticket(Base):
 class question(Base):
     id:int
     question:str
+class updated_question():
+    name:str
+    question:str
