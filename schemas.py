@@ -1,13 +1,30 @@
-from db import Base
+from pydantic import BaseModel
 
-class Ticketss(Base):
-    id:int
-    name:str
-class Updated_ticket(Base):
-    updated_name:str
-class question(Base):
-    id:int
+
+class Ticket_create(BaseModel):
+    name: str
+
+
+
+
+class Question_create(BaseModel):
     question:str
-class updated_question():
-    name:str
-    question:str
+    ticket_id:int
+
+class Ticket_schema(BaseModel):
+    id: int
+    name: str
+
+
+
+class Question_schema(BaseModel):
+    question: str
+
+
+class ticket_update(BaseModel):
+    new_name:str
+    id:int
+
+class Ticket_read(BaseModel):
+    ticket_name:str
+    questions:str
